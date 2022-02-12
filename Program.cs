@@ -7,18 +7,15 @@ namespace Blog
 {
     internal class Program
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=your_password;TrustServerCertificate=True";
+        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=Ghfkgurhg@8683;TrustServerCertificate=True";
         static void Main(string[] args)
         {
             var connection = new SqlConnection(CONNECTION_STRING);
             connection.Open();
 
-            // ReadUsers(connection);
-            // ReadRole(connection);
-            // ReadUser();
-            // CreateUser();
-            // UpdateUser();
-            // DeleteUser();
+            ReadUsers(connection);
+            ReadRoles(connection);
+            ReadTags(connection);
 
             connection.Close();
         }
