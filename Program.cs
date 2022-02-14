@@ -21,14 +21,14 @@ namespace Blog
             // CreateUsers(repositoryUsers);
             // DeleteUsers(repositoryUsers);
             // UpdateUsers(repositoryUsers);
-            ReadUsers(connection);
+            // ReadUsers(connection);
 
             // CreateRoles(repositoryRoles);
             // UpdateRole(repositoryRoles);
             // DeleteRole(repositoryRoles);
-            ReadRoles(connection);
+            // ReadRoles(connection);
 
-            ReadTags(connection);
+            // ReadTags(connection);
             // CreateTags(repositoryTags);
             // UpdateTags(repositoryTags);
             // DeleteTags(repositoryTags);
