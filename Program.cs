@@ -21,7 +21,7 @@ namespace Blog
             // CreateUsers(repositoryUsers);
             // DeleteUsers(repositoryUsers);
             // UpdateUsers(repositoryUsers);
-            // ReadUsers(connection);
+            ReadUsers(connection);
 
             // CreateRoles(repositoryRoles);
             // UpdateRole(repositoryRoles);
@@ -43,7 +43,11 @@ namespace Blog
 
             foreach (var item in items)
             {
-                Console.WriteLine(item.Name + " - " + item.Email);
+                Console.WriteLine(item.Name);
+                foreach (var role in item.Roles)
+                {
+                    Console.WriteLine($" - {role.Name}");
+                }
             }
         }
         public static void CreateUsers(Repository<User> repository)
@@ -51,10 +55,10 @@ namespace Blog
             var user = new User
             {
                 Bio = "8x Microsoft MVP",
-                Email = "andre@balta.io",
+                Email = "email@balta.io",
                 Image = "https://balta.io/andrebaltieri.jpg",
                 Name = "André Baltieri",
-                Slug = "andre-baltieri",
+                Slug = "felipe-macedo",
                 PasswordHash = Guid.NewGuid().ToString()
             };
 
