@@ -18,10 +18,10 @@ namespace Blog
 
             connection.Open();
 
+            ReadUsers(connection);
             // CreateUsers(repositoryUsers);
             // DeleteUsers(repositoryUsers);
             // UpdateUsers(repositoryUsers);
-            ReadUsers(connection);
 
             // CreateRoles(repositoryRoles);
             // UpdateRole(repositoryRoles);
@@ -38,12 +38,13 @@ namespace Blog
 
         public static void ReadUsers(SqlConnection connection)
         {
-            var repository = new Repository<User>(connection);
-            var items = repository.Get();
+            var repository = new UserRepository(connection);
+            var items = repository.GetWithRoles();
 
             foreach (var item in items)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine($" - {item.Name}");
+
                 foreach (var role in item.Roles)
                 {
                     Console.WriteLine($" - {role.Name}");
@@ -151,5 +152,6 @@ namespace Blog
             repository.Delete(tag.Id);
             Console.WriteLine("Exclusão efetuada com sucesso");
         }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
     }
 }
