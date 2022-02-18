@@ -8,8 +8,7 @@ namespace Blog.Repositories
     {
         private readonly SqlConnection _connection;
 
-        public UserRepository(SqlConnection connection) : base(connection)
-           => _connection = connection;
+        public UserRepository(SqlConnection connection) : base(connection) => _connection = connection;
 
         public List<User> GetWithRoles()
         {
@@ -20,6 +19,7 @@ namespace Blog.Repositories
                             [User]
                             LEFT JOIN [UserRole] ON [UserRole].[UserId] = [User].[Id]
                             LEFT JOIN [Role] ON [UserRole].[RoleId] = [Role].[Id]";
+
             var users = new List<User>();
 
             var items = _connection.Query<User, Role, User>(

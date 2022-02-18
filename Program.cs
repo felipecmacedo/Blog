@@ -8,6 +8,7 @@ namespace Blog
     internal class Program
     {
         private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Blog;User ID=sa;Password=Ghfkgurhg@8683;TrustServerCertificate=True";
+        
         static void Main(string[] args)
         {
             var connection = new SqlConnection(CONNECTION_STRING);
@@ -83,7 +84,7 @@ namespace Blog
 
             Console.WriteLine("Exclusão feita com sucesso");
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------
+        
         public static void ReadRoles(SqlConnection connection)
         {
             var repository = new Repository<Role>(connection);
@@ -115,7 +116,7 @@ namespace Blog
             role.Id = 2;
             repository.Delete(role.Id);
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------
+        
         public static void ReadTags(SqlConnection connection)
         {
             var repository = new Repository<Tag>(connection);
@@ -152,6 +153,5 @@ namespace Blog
             repository.Delete(tag.Id);
             Console.WriteLine("Exclusão efetuada com sucesso");
         }
-        //-------------------------------------------------------------------------------------------------------------------------------------------------
     }
 }
