@@ -2,6 +2,7 @@
 using Blog.Repositories;
 using Microsoft.Data.SqlClient;
 using Blog.Screens.TagScreen;
+using Blog.Screens.CategoryScreen;
 
 namespace Blog
 {
@@ -42,6 +43,9 @@ namespace Blog
             {
                 case 1:
                     MenuUserScreen.Load();
+                    break;
+                case 3:
+                    MenuCategoryScreen.Load();
                     break;
                 case 4:
                     MenuTagScreen.Load();
