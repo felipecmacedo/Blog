@@ -28,10 +28,10 @@ namespace Blog
             Console.WriteLine("--------------");
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine();
-            Console.WriteLine("1 - Gestão de usuário");
+            Console.WriteLine("1 - Gestão de usuário"); //ok
             Console.WriteLine("2 - Gestão de perfil");
-            Console.WriteLine("3 - Gestão de categoria");
-            Console.WriteLine("4 - Gestão de tag");
+            Console.WriteLine("3 - Gestão de categoria"); //ok
+            Console.WriteLine("4 - Gestão de tag"); //ok
             Console.WriteLine("5 - Vincular perfil/usuário");
             Console.WriteLine("6 - vincular post/tag");
             Console.WriteLine("7 - Relatórios");
